@@ -1,4 +1,7 @@
+import random
+
 import pygame, sys, os
+from Estudiante import Estudiante
 
 size = (650, 742)
 IMG_DIR = "imagenesproy"
@@ -36,21 +39,20 @@ def main():
     #sonidos
     #crear objetos
     clock = pygame.time.Clock()
-    #para que al dejar apretada una tecla, se repita la accion
-    pygame.key.set_repeat(1, 25)
-
+    est = []
+    for i in range(random.randrange(60)):
+        est.append(Estudiante(600, 80, pygame.transform.scale(load_image("estudiante.png", IMG_DIR, alpha=True), (60, 60))))
     while True:
         clock.tick(60)
         # actualizar objetos (diff acciones de objetos)
-        est = pygame.transform.scale(load_image("estudiante.png", IMG_DIR, alpha=True), (60, 60))
+        for i in est:
+            i.update()
         #controles
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
         #actualizar pantalla
-        # screen.blit(fondo, (0, 0))
         screen.fill(BLACK)
-        # pygame.draw.rect(screen, GBROWN, (5, 5, 690, 790))
         #dibujar pantalla
         w = 0
         h = 0
@@ -67,9 +69,10 @@ def main():
         pygame.draw.rect(screen, DESKPROF, (21.25, 51.25, 78.75, 43.75,))
         pygame.draw.rect(screen, BLACK, (70, 190, 200, 40))
         pygame.draw.rect(screen, WHEAT, (71.25, 191.25, 198.75, 38.75))
+        # dibujar objetos
+        for i in est:
+            screen.blit(i.image, (i.rect.centerx, i.rect.centery))
 
-
-        screen.blit(est, (200, 500))
         pygame.display.flip()
 
 

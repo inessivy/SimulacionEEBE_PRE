@@ -1,26 +1,22 @@
-import random, pygame.sprite, View_Aula
+import random, pygame
 
-IMG_DIR = "imagenesproy"
-SONIDO_DIR = "sonidos proy"
 
 class Estudiante(pygame.sprite.Sprite):
-    def __init__(self, posicion):
+    def __init__(self, x, y, imagen):
         pygame.sprite.Sprite.__init__(self)
-        self.posx = posicion[0]
-        self.posy = posicion[1]
-        self.image = load_image("estudiante.jpg", IMG_DIR, alpha=True)
+        self.image = imagen
         self.rect = self.image.get_rect()
-        self.speed = [3, 3]
-
-    def direccion(self):
+        self.rect.centerx = x
+        self.rect.centery = y
         self.dirx = random.randrange(650)
         self.diry = random.randrange(742)
-        return self.dirx, self.diry
+        self.speed = 3
 
-    def mover(self):
-        self.posx += self.speed[0]
-        self.posy += self.speed[1]
-        self.rect.move_ip
+    def update(self):
+        if self.rect.centerx >= self.dirx:
+            self.rect.centerx -= self.speed
+        if self.rect.centery <= self.diry:
+            self.rect.centery += self.speed
 
 
     def parar(self):
