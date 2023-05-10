@@ -1,23 +1,22 @@
-import random, pygame
+from Persona import Persona
 
-
-class Estudiante(pygame.sprite.Sprite):
-    def __init__(self, x, y, imagen):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = imagen
-        self.rect = self.image.get_rect()
-        self.rect.centerx = x
-        self.rect.centery = y
-        self.dirx = random.randrange(650)
-        self.diry = random.randrange(742)
-        self.speed = 3
-
-    def update(self):
-        if self.rect.centerx >= self.dirx:
-            self.rect.centerx -= self.speed
-        if self.rect.centery <= self.diry:
-            self.rect.centery += self.speed
-
-
-    def parar(self):
+class Estudiante(Persona):
+    def __init__(self):
         pass
+
+
+    def dibuj_aula(self, pant, tx, ty, mesx, mesy): #  tx=3, ty=5, mesx=70, mesy = 210
+        self.dibuj_suelo(pant, 0, 0)
+        self.dibuj_tarima(pant, 3, 5)
+        self.dibuj_puerta(pant)
+        self.dibuj_mesa_prof(pant)
+        # self.dibuj_mesa(pant, mesx, mesy)
+        # for i in range(2):
+            # for j in range(5):
+                # if j == 0:
+                    # self.dibuj_mesa(pant, mesx, mesy)
+                # else:
+                    # self.dibuj_mesa(pant, mesx, mesy)
+                # mesy += 100
+            # mesx += 280
+            # mesy = 210
