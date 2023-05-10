@@ -1,7 +1,7 @@
 import pygame
 import os
 class MesaProf():
-    def __init__(self, x, y, dir_img):   # x=21.25 y=51.25
+    def __init__(self, dir_img, x=21.25, y=51.25):
         self.image = pygame.transform.scale(pygame.image.load(os.path.join(dir_img, "MesaProf.jpg")), (78.75, 43.75))
         self.rect = self.image.get_rect()
         self.rect.left = x

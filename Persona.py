@@ -16,9 +16,6 @@ class Persona(pygame.sprite.Sprite):
     def update(self):
         if self.rect.centerx >= self.dir[0]:
             self.rect.centerx -= self.speedx
-            # print(self.speedx, self.rect.left)
+            print(self.speedx, self.rect.left)
         if self.rect.centery <= self.dir[1]:
             self.rect.centery += self.speedy
-
-    def colision(self):
-        pygame.sprite.collide_rect()
