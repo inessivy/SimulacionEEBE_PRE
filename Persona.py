@@ -3,7 +3,7 @@ import pygame.sprite
 
 
 class Persona(pygame.sprite.Sprite):
-    def __init__(self, x, y, imagen):
+    def __init__(self, x, y, imagen=None):
         pygame.sprite.Sprite.__init__(self)
         self.image = imagen
         self.rect = self.image.get_rect()
@@ -14,8 +14,8 @@ class Persona(pygame.sprite.Sprite):
         self.speedy = 3.4
 
     def update(self):
-        if self.rect.centerx >= self.dir[0]:
+        if self.rect.centerx > self.dir[0]:
             self.rect.centerx -= self.speedx
-            print(self.speedx, self.rect.left)
-        if self.rect.centery <= self.dir[1]:
+            # print(self.speedx, self.speedy)
+        if self.rect.centery < self.dir[1]:
             self.rect.centery += self.speedy
