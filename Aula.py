@@ -13,6 +13,10 @@ IMG_DIR = "imagenesproy"
 class Aula():
     def __init__(self, mx, my, filas, columnas): #mx=70, my=210
         self.size = [(650, 742)]
+        # self.columnas_mesas = columnas
+        # self.filas_mesas= filas
+        # self.mesas_x = mx
+        # self.mesas_y = my
         self.mesas = pygame.sprite.Group()
         for n in range(columnas):
             for n in range(filas):
@@ -20,19 +24,34 @@ class Aula():
                 my += 100
             mx = 350
             my = 210
-
         self.ent_pasillos = pygame.sprite.Group()
         mx = 70
         for i in range(3):
-            entrada_pas = Entrada(mx-35, my-50)
+            entrada_pas = Entrada(mx - 35, my - 50)
             self.ent_pasillos.add(entrada_pas)
             mx += 270
-
         self.ent_mesas = pygame.sprite.Group()
         for i in self.mesas:
-            ent_izq_mesa = Entrada(i.rect.left-30, i.rect.bottom+20)
-            ent_der_mesa = Entrada(i.rect.right+30, i.rect.bottom+20)
-            self.ent_mesas.add(ent_izq_mesa, ent_der_mesa)
+            self.ent_mesas.add(i.entrada_izq, i.entrada_der)
+
+    # def create_matrix_mesas(self):
+    #     for n in range(self.columnas_mesas):
+    #         for n in range(self.filas_mesas):
+    #             self.mesas.add(Mesa(self.mesas_x, self.mesas_y))
+    #             self.mesas_y += 100
+    #         self.mesas_x = 350
+    #         self.mesas_y = 210
+
+    # def create_ent_pasillos(self):
+    #     self.mesas_x = 70
+    #     for i in range(3):
+    #         entrada_pas = Entrada(self.mesas_x - 35, self.mesas_y - 50)
+    #         self.ent_pasillos.add(entrada_pas)
+    #         self.mesas_x += 270
+
+    # def create_ent_mesas(self):
+    #     for i in self.mesas:
+    #         self.ent_mesas.add(i.entrada_izq, i.entrada_der)
 
 
     def dibuj_aula(self, pant):
@@ -48,9 +67,31 @@ class Aula():
         mesaprof = MesaProf(IMG_DIR)
         mesaprof.dibuj_mesa_prof(pant)
 
+        # self.create_matrix_mesas()
         for m in self.mesas:
             m.dibuj_mesa(pant)
-
+        # self.create_ent_pasillos()
         self.ent_pasillos.draw(pant)
-
+        # self.create_ent_mesas()
         self.ent_mesas.draw(pant)
+
+    #  metodos para devolder diferentes destinos(pasillo, mesa, silla)
+    def get_ent_pasillos(self):
+        return self.ent_pasillos.sprites()
+
+    def get_ent_mesas(self, pasillo):
+        if pasillo == self.get_ent_pasillos()[0]:
+            return self.ent_mesas.sprites()[0:9:2]
+        elif pasillo == self.get_ent_pasillos()[1]:
+            return self.ent_mesas.sprites()[1:10:2] + self.ent_mesas.sprites()[10:20:2]
+        else:
+            return self.ent_mesas.sprites()[11:20:2]
+
+    # def sillas(self, ent_mesa):
+    #     for i in self.mesas:
+    #         if ent_mesa == i.entrada_izq:
+    #             return i.sillas.sprites()[0:2]
+    #         elif ent_mesa == i.entrada_der:
+    #             return i.sillas.sprites()[2:]
+            # probar mas adelante a repartir las sillas para cada pasillo
+            # devolviendo: i.sillas.sprites()[0:2] o [-3:-1] (?)

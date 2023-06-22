@@ -12,6 +12,8 @@ class View():
         self.estudiantes = pygame.sprite.Group()
         self.sillas = pygame.sprite.Group()
         self.place = Aula(70, 210, 5, 2)
+        self.dest = pygame.sprite.Group()
+
 
     def main(self):
         pygame.init()
@@ -19,10 +21,10 @@ class View():
         clock = pygame.time.Clock()
 
         # for i in range(random.randint(1, 40)):
-        for i in range(1):
+        for i in range(10):
             estudiante = Estudiante(600, 80, self.place)
-            estudiante.dir = random.choice(estudiante.dest)
             self.estudiantes.add(estudiante)
+            self.dest.add(estudiante.dest)
         for m in self.place.mesas:
             for s in m.sillas:
                 self.sillas.add(s)
@@ -39,12 +41,18 @@ class View():
             self.place.dibuj_aula(screen)
             self.estudiantes.draw(screen)
             # update objetos
-            for i in self.estudiantes:
-                i.update()
-                i.cambio_destino()
+            self.estudiantes.update()
+            # detectar colisiones
+            coll_dict = pygame.sprite.groupcollide(self.estudiantes, self.dest, False, False)
+            for i in coll_dict:
+                if i.dest in coll_dict[i]:
+                    i.go_mesa(i.dest)
+            coll_m_dict = pygame.sprite.groupcollide(self.estudiantes, self.place.ent_mesas, False, False)
+            for i in coll_m_dict:
+                if i.dest in coll_m_dict[i]:
+                    i.go_silla(i.dest)
 
             pygame.display.flip()
-            # time.sleep(100000)
 
 
 if __name__ == "__main__":

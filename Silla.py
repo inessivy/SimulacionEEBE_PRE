@@ -10,8 +10,7 @@ class Silla(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.left = sx
         self.rect.top = sy
-        # self.rect.centerx = sx + 20
-        # self.rect.centery = sy + 20
+        self.rect.center = (sx+20, sy+20)
         self.ocupada = False
 
     def dibuj_silla(self, pant):
