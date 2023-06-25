@@ -51,6 +51,9 @@ class View():
             for i in coll_m_dict:
                 if i.dest in coll_m_dict[i]:
                     i.go_silla(i.dest)
+            #     self.estudiantes.remove(i)
+            #     self.place.estudiantes_sentados.add(i)
+            # self.place.estudiantes_sentados.draw(screen)
 
             pygame.display.flip()
 

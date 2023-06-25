@@ -34,6 +34,8 @@ class Aula():
         for i in self.mesas:
             self.ent_mesas.add(i.entrada_izq, i.entrada_der)
 
+        self.estudiantes_sentados = pygame.sprite.Group()
+
     # def create_matrix_mesas(self):
     #     for n in range(self.columnas_mesas):
     #         for n in range(self.filas_mesas):
@@ -87,11 +89,3 @@ class Aula():
         else:
             return self.ent_mesas.sprites()[11:20:2]
 
-    # def sillas(self, ent_mesa):
-    #     for i in self.mesas:
-    #         if ent_mesa == i.entrada_izq:
-    #             return i.sillas.sprites()[0:2]
-    #         elif ent_mesa == i.entrada_der:
-    #             return i.sillas.sprites()[2:]
-            # probar mas adelante a repartir las sillas para cada pasillo
-            # devolviendo: i.sillas.sprites()[0:2] o [-3:-1] (?)

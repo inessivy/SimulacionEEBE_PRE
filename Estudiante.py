@@ -28,9 +28,10 @@ class Estudiante(Persona):
     def go_silla(self, ent_mesa):
         # self.dest =
         # self.dest = random.choice(self.space.sillas(ent_mesa))
-
+        self.speedx = 1
+        self.speedy= 1
         for i in self.space.mesas.sprites():
-            if ent_mesa == i.entrada_der:
+            if ent_mesa == i.entrada_der or ent_mesa == i.entrada_izq:
                 self.dest = i.get_sillas(ent_mesa)[0]
                 c = 0
                 if not self.dest.ocupada:
@@ -38,62 +39,25 @@ class Estudiante(Persona):
                     self.dest.ocupada = True
                     c += 1
                     print("OCUPO UNA SILLA")
-                elif i.get_sillas(ent_mesa)[1].ocupada == False:
+                elif not i.get_sillas(ent_mesa)[1].ocupada:
                     self.dest = i.get_sillas(ent_mesa)[1]
                     self.dir = self.dest.rect.center
                     self.dest.ocupada = True
                     c += 1
                     print("OCUPO LA SILLA DE AL LADO")
-                else:
-                    self.dest = ent_mesa
+                elif i.get_ocupacion() == True:
+                    print(c, "MESA OCUPADA. NO TENGO SILLA")
+                    self.dest = random.choice(self.space.get_ent_pasillos())
                     self.dir = self.dest.rect.center
-                    print("NO TENGO SILLA")
-                    if i.get_ocupacion() == True:
-                        print(c, "MESA OCUPADA. NO TENGO SILLA")
-            elif ent_mesa == i.entrada_izq:
-                # print("SOY DE LA IZQUIERDA")
-                # self.dest = random.choice(self.space.get_ent_pasillos())
-                self.dest = self.space.get_ent_pasillos()[1]
-                self.dir = self.dest.rect.center
+                # else:
+                #     self.dest = random.choice(self.space.get_ent_pasillos())
+                #     self.dir = self.dest.rect.center
+                #     print("NO TENGO SILLA")
+                #     if i.get_ocupacion() == True:
+                #         print(c, "MESA OCUPADA. NO TENGO SILLA")
 
 
+    def find_new_mesa(self):
+        pass
+        # preguntar que mesa no esta ocupada, solo necesita que tenga 1 libre
 
-            # mit = iter(self.space.ent_mesas.sprites())
-            # c = 0
-            # if ent_mesa == i.entrada_izq or ent_mesa == i.entrada_der:
-            #     if not i.ocupada:
-            #         if not self.dest.ocupada:
-            #             self.dir = self.dest.rect.center
-            #             self.dest.ocupada = True
-            #             c += 1
-            #             print("SILLA NO OCUPADA", c, ent_mesa.rect.center, self.dir)
-            #         else:
-            #             self.dest = next() # MIRAR LA SILLA DE AL LADO SI ESTA OCUPADA
-            #             self.dir = self.dest.rect.center
-            #             print("SILLA OCUPADA", self.dir)
-            #     elif c == 4:
-            #         i.ocupada = True
-            #         print("MESA OCUPADA")
-            #         self.dest = next(mit, ent_mesa)
-            #         self.dir = self.dest.rect.center
-
-        # for i in self.space.mesas.sprites():
-        #     mit = iter(self.space.mesas.sprites())
-        #     if ent_mesa == i.entrada_izq or ent_mesa == i.entrada_der:
-        #         c = 0
-        #         if not i.ocupada:
-        #             if not self.dest.ocupada:
-        #                 self.dir = self.dest.rect.center
-        #                 self.dest.ocupada = True
-        #                 print("SILLA NO OCUPADA")
-        #                 c += 1
-        #             else:
-        #                 sit = iter(self.space.sillas(ent_mesa))
-        #                 self.dest = next(sit)
-        #                 self.dir = self.dest.rect.center
-        #                 print("SILLA OCUPADA")
-        #         elif c == 4:
-        #             i.ocupada = True
-        #             print("MESA OCUPADA")
-        #             self.dest = next(mit, ent_mesa)
-        #             self.dir = self.dest.rect.center
