@@ -21,7 +21,7 @@ class View():
         clock = pygame.time.Clock()
 
         # for i in range(random.randint(1, 40)):
-        for i in range(10):
+        for i in range(20):
             estudiante = Estudiante(600, 80, self.place)
             self.estudiantes.add(estudiante)
             self.dest.add(estudiante.dest)

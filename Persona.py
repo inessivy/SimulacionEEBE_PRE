@@ -27,14 +27,3 @@ class Persona(pygame.sprite.Sprite):
         else:
             pass
 
-        # if self.rect.centerx > self.dir[0]:
-        #     self.rect.centerx -= self.speedx
-        # elif self.rect.centerx < self.dir[0]:
-        #     self.rect.centerx += self.speedx
-        #     print(self.rect.center, self.dir)
-        #     # print(self.rect.center)
-        # if self.rect.centery < self.dir[1]:
-        #     self.rect.centery += self.speedy
-        # elif self.rect.centery > self.dir[1]:
-        #     self.rect.centery -= self.speedy
-        #     print(self.rect.center, self.dir)

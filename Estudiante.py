@@ -26,26 +26,24 @@ class Estudiante(Persona):
         self.dir = self.dest.rect.center
 
     def go_silla(self, ent_mesa):
-        # self.dest =
-        # self.dest = random.choice(self.space.sillas(ent_mesa))
         self.speedx = 1
-        self.speedy= 1
+        self.speedy = 1
         for i in self.space.mesas.sprites():
             if ent_mesa == i.entrada_der or ent_mesa == i.entrada_izq:
                 self.dest = i.get_sillas(ent_mesa)[0]
                 c = 0
-                if not self.dest.ocupada:
+                if not self.dest.ocupada():
                     self.dir = self.dest.rect.center
-                    self.dest.ocupada = True
+                    self.dest.sentar(self)
                     c += 1
                     print("OCUPO UNA SILLA")
-                elif not i.get_sillas(ent_mesa)[1].ocupada:
+                elif not i.get_sillas(ent_mesa)[1].ocupada():
                     self.dest = i.get_sillas(ent_mesa)[1]
                     self.dir = self.dest.rect.center
-                    self.dest.ocupada = True
+                    self.dest.sentar(self)
                     c += 1
                     print("OCUPO LA SILLA DE AL LADO")
-                elif i.get_ocupacion() == True:
+                elif i.get_ocupacion():
                     print(c, "MESA OCUPADA. NO TENGO SILLA")
                     self.dest = random.choice(self.space.get_ent_pasillos())
                     self.dir = self.dest.rect.center

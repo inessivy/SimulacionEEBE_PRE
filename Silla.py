@@ -11,7 +11,16 @@ class Silla(pygame.sprite.Sprite):
         self.rect.left = sx
         self.rect.top = sy
         self.rect.center = (sx+20, sy+20)
-        self.ocupada = False
+        self.estudiante = None
 
     def dibuj_silla(self, pant):
         pant.blit(self.image, (self.rect.left, self.rect.top))
+
+    def sentar(self, estudiante):
+        self.estudiante = estudiante
+
+    def ocupada(self):
+        return self.estudiante is not None
+
+    def levantarse(self):
+        self.estudiante = None
