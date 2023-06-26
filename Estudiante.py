@@ -55,30 +55,43 @@ class Estudiante(Persona):
         for i in self.space.mesas.sprites():
             if ent_mesa == i.entrada_der or ent_mesa == i.entrada_izq:
                 self.dest = i.get_sillas(ent_mesa)[0]
-                if not self.dest.ocupada(): # la primera silla
+                if not self.dest.ocupada(): # la primera
+                    print("primera silla")
                     self.dir = self.dest.rect.center
                     self.dest.sentar(self)
 
                 elif not i.get_sillas(ent_mesa)[1].ocupada():   # la silla del lado
+                    print("segunda silla")
                     self.dest = i.get_sillas(ent_mesa)[1]
                     self.dir = self.dest.rect.center
                     self.dest.sentar(self)
 
                 # elif self.dest not in self.space.ent_pasillos: # la silla no ha salido del pasillo
-                elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all(w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)):
+                # elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all(w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)):
+                elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
+                    print("busco otra mesa")
                     # busco una silla en mismo pasillo
-                    print("hola")
                     for j in self.space.get_ent_mesas(self.pasillo):
                         if not j.destino.get_ocupacion(j):
                             self.dest = j
                             self.dir = self.dest.rect.center
-                elif all(w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)):
-                # else:
+                # if all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
+                else:
+                    print("voy al pasillo")
                     # busco silla en otro pasillo
-                    # if self.dir in [q.rect.center for q in self.space.get_ent_pasillos()]:
                     if self.rect.center == self.pasillo.rect.center:
                         print("busco silla en otro pasillo")
-                        self.go_new_silla()
+                        # self.go_new_silla()
                     else:
                         self.dest = self.pasillo
                         self.dir = self.dest.rect.center
+
+
+                    # # if self.dir in [q.rect.center for q in self.space.get_ent_pasillos()]:
+                    # if self.rect.center == self.pasillo.rect.center:
+                    #     print("busco silla en otro pasillo")
+                    #     self.go_new_silla()
+                    # else:
+                    #     self.dest = self.pasillo
+                    #     self.dir = self.dest.rect.center
+
