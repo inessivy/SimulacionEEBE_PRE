@@ -89,3 +89,21 @@ class Aula():
         else:
             return self.ent_mesas.sprites()[11:20:2]
 
+    def get_mesas_libres(self):
+        mesas_libres = []
+        for i in self.mesas:
+            if not i.get_ocupacion(i.entrada_izq) or not i.get_ocupacion(i.entrada_der):
+                mesas_libres.append(i)
+
+    def get_sillas_libres(self, mesa):
+        sillas_libres = []
+        for i in mesa.sillas:
+            if not i.ocupada():
+                sillas_libres.append(i)
+        return sillas_libres
+
+
+    # def get_ocupacion_mesa(self, mesa):
+    #     return mesa.get_ocupacion()
+
+

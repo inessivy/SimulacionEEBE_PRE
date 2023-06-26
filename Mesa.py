@@ -21,10 +21,15 @@ class Mesa(pygame.sprite.Sprite):
         self.rect.top = y
         self.entrada_izq = Entrada(self.rect.left-30, self.rect.bottom+20)
         self.entrada_der = Entrada(self.rect.right+30, self.rect.bottom+20)
+        # relacionar entrada con mesa
+        self.entrada_izq.destino = self
+        self.entrada_der.destino = self
+
         self.sillas = pygame.sprite.Group()
         for n in range(4):
             self.sillas.add(Silla(x+5, y+45))
             x += 50
+
         self.ocupada = False
 
     def dibuj_mesa(self, pant):
@@ -38,13 +43,19 @@ class Mesa(pygame.sprite.Sprite):
             return self.sillas.sprites()[0:2]
         elif ent_mesa == self.entrada_der:
             return self.sillas.sprites()[2:]
-    def get_ocupacion(self):
-        ocupacion = [s.ocupada for s in self.sillas]
-        if all(ocupacion):
-            self.ocupada = True
-            return True
-        return False
+    def get_ocupacion(self, ent_mesa):
+        ocupacion = [s.ocupada() for s in self.get_sillas(ent_mesa)]
+        return all(ocupacion)
 
+    # def create_ent_silla(self):
+    #     for i in self.sillas.sprites()[0:2]:
+    #         i.entrada = self.entrada_izq
+    #     for j in self.sillas.sprites()[2:]:
+    #         j.entrada = self.entrada_der
+
+    def get_ent_silla(self, silla):
+        self.create_ent_silla()
+        return silla.entrada
 
 if __name__ == '__main__':
     import doctest

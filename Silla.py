@@ -13,6 +13,7 @@ class Silla(pygame.sprite.Sprite):
         self.rect.center = (sx+20, sy+20)
         self.estudiante = None
 
+
     def dibuj_silla(self, pant):
         pant.blit(self.image, (self.rect.left, self.rect.top))
 

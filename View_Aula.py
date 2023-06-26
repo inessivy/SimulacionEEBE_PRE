@@ -7,13 +7,12 @@ from Estudiante import Estudiante
 
 class View():
     def __init__(self):
-        self.size = (650, 742)
+        self.size = (635, 730)
         self.SONIDO_DIR = "sonidos proy"
         self.estudiantes = pygame.sprite.Group()
         self.sillas = pygame.sprite.Group()
         self.place = Aula(70, 210, 5, 2)
         self.dest = pygame.sprite.Group()
-
 
     def main(self):
         pygame.init()
@@ -21,7 +20,7 @@ class View():
         clock = pygame.time.Clock()
 
         # for i in range(random.randint(1, 40)):
-        for i in range(20):
+        for i in range(40):
             estudiante = Estudiante(600, 80, self.place)
             self.estudiantes.add(estudiante)
             self.dest.add(estudiante.dest)

@@ -8,6 +8,7 @@ class Entrada(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.centery = y
+        self.destino = pygame.sprite.Sprite()
 
     # def dibuj_ent(self, pant, ent_pasillo):
     #     ent_pasillo(self)
