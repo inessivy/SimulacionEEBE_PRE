@@ -40,22 +40,17 @@ class Mesa(pygame.sprite.Sprite):
 
     def get_sillas(self, ent_mesa):
         if ent_mesa == self.entrada_izq:
+            for i in self.sillas.sprites()[0:2]:
+                i.entrada = self.entrada_izq
             return self.sillas.sprites()[0:2]
         elif ent_mesa == self.entrada_der:
+            for i in self.sillas.sprites()[2:]:
+                i.entrada = self.entrada_der
             return self.sillas.sprites()[2:]
     def get_ocupacion(self, ent_mesa):
         ocupacion = [s.ocupada() for s in self.get_sillas(ent_mesa)]
         return all(ocupacion)
 
-    # def create_ent_silla(self):
-    #     for i in self.sillas.sprites()[0:2]:
-    #         i.entrada = self.entrada_izq
-    #     for j in self.sillas.sprites()[2:]:
-    #         j.entrada = self.entrada_der
-
-    def get_ent_silla(self, silla):
-        self.create_ent_silla()
-        return silla.entrada
 
 if __name__ == '__main__':
     import doctest

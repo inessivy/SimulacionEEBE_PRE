@@ -7,35 +7,49 @@ IMG_DIR = "imagenesproy"
 
 
 class Estudiante(Persona):
-    def __init__(self, x, y, aula):
+    def __init__(self, x, y, espacio):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, "estudiante.png")), (50, 50))
+        self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, random.choice(["mujer_caminando.png", "hombre_caminando.png"]))), (45, 60))
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.centery = y
         self.speedx = random.uniform(1, 3)
         self.speedy = random.uniform(1, 3)
-        self.space = aula
+        self.space = espacio
         # self.space.create_ent_pasillos()
         self.dest = random.choice(self.space.get_ent_pasillos())
         self.dir = self.dest.rect.center
 
+    def change_image(self):
+        # if self.rect.center == self.dir:
+        self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, random.choice(["mujer_sentada.png", "hombre_sentado.png"]))), (45, 60))
+        # if self.image == pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, "mujer_caminando.png")), (50, 50)):
+        #     self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, "mujer_sentada.png")), (50, 50))
+        # else:
+        #     self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, "hombre_sentado.png")), (50, 50))
 
-    # def find_new_silla(self):
-    #     # preguntar que mesa no esta ocupada, solo necesita que tenga 1 libre
-    #     new_mesa = random.choice(self.space.get_mesas_libres())
-    #     new_silla = self.space.get_sillas_libres(new_mesa)
-    #     return new_silla, new_mesa
+    def find_new_silla(self):
+        # preguntar que mesa no esta ocupada, solo necesita que tenga 1 libre
+        new_silla = self.space.get_sillas_libres()
+        return new_silla
 
     def go_new_silla(self):
-        # new_mesa = self.find_new_silla()[1]
-        new_mesa = random.choice(self.space.get_mesas_libres())
-        # new_silla = self.find_new_silla()[0]
-        # new_silla = self.space.get_sillas_libres(new_mesa)
-        # ent_silla = new_mesa.get_ent_silla(new_silla)
-
-        self.dest = new_mesa.entrada_izq
-        self.dir = self.dest.rect.center
+        new_silla = random.choice(self.find_new_silla())
+        print("nueva silla", new_silla)
+        if self.rect.center == self.space.get_pasillo(new_silla.entrada):
+            print("voy a nueva mesa")
+            self.dest = new_silla.entrada
+            self.dir = self.dest.rect.center
+        elif self.rect.center == new_silla.entrada:
+            print("voy a nueva silla")
+            self.dest = new_silla
+            self.dir = self.dest.rect.center
+            self.dest.sentar(self)
+            self.space.estudiantes_sentados.add(self)
+        else:
+            print("salgo al pasillo")
+            self.dest = self.space.get_pasillo(new_silla.entrada)
+            self.dir = self.dest.rect.center
 
 
 
@@ -59,15 +73,14 @@ class Estudiante(Persona):
                     print("primera silla")
                     self.dir = self.dest.rect.center
                     self.dest.sentar(self)
+                    self.space.estudiantes_sentados.add(self)
 
                 elif not i.get_sillas(ent_mesa)[1].ocupada():   # la silla del lado
                     print("segunda silla")
                     self.dest = i.get_sillas(ent_mesa)[1]
                     self.dir = self.dest.rect.center
                     self.dest.sentar(self)
-
-                # elif self.dest not in self.space.ent_pasillos: # la silla no ha salido del pasillo
-                # elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all(w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)):
+                    self.space.estudiantes_sentados.add(self)
                 elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
                     print("busco otra mesa")
                     # busco una silla en mismo pasillo
@@ -77,21 +90,14 @@ class Estudiante(Persona):
                             self.dir = self.dest.rect.center
                 # if all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
                 else:
-                    print("voy al pasillo")
+                    # print("voy al pasillo")
                     # busco silla en otro pasillo
-                    if self.rect.center == self.pasillo.rect.center:
+                    if self.rect.center == self.space.get_ent_mesas(self.pasillo)[0].rect.center:
                         print("busco silla en otro pasillo")
-                        # self.go_new_silla()
+                        self.go_new_silla()
                     else:
-                        self.dest = self.pasillo
+                        self.dest = self.space.get_ent_mesas(self.pasillo)[0]
                         self.dir = self.dest.rect.center
-
-
-                    # # if self.dir in [q.rect.center for q in self.space.get_ent_pasillos()]:
-                    # if self.rect.center == self.pasillo.rect.center:
-                    #     print("busco silla en otro pasillo")
-                    #     self.go_new_silla()
-                    # else:
-                    #     self.dest = self.pasillo
-                    #     self.dir = self.dest.rect.center
+        if self.rect.center == self.dir:
+            self.change_image()
 

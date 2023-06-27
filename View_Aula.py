@@ -1,4 +1,5 @@
 import random
+import time
 import pygame
 import sys
 from Aula import Aula
@@ -28,6 +29,7 @@ class View():
             for s in m.sillas:
                 self.sillas.add(s)
 
+
         while True:
             clock.tick(60)
             for event in pygame.event.get():
@@ -37,6 +39,7 @@ class View():
             # print(scollision_dict)
 
             # dibujar aula y estudiantes
+            screen.fill((0, 0, 0))
             self.place.dibuj_aula(screen)
             self.estudiantes.draw(screen)
             # update objetos
@@ -50,9 +53,7 @@ class View():
             for i in coll_m_dict:
                 if i.dest in coll_m_dict[i]:
                     i.go_silla(i.dest)
-            #     self.estudiantes.remove(i)
-            #     self.place.estudiantes_sentados.add(i)
-            # self.place.estudiantes_sentados.draw(screen)
+            pygame.time.delay(40000)
 
             pygame.display.flip()
 

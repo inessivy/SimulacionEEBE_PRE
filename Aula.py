@@ -17,6 +17,7 @@ class Aula():
         # self.filas_mesas= filas
         # self.mesas_x = mx
         # self.mesas_y = my
+        self.tarima = Tarima(IMG_DIR)
         self.mesas = pygame.sprite.Group()
         for n in range(columnas):
             for n in range(filas):
@@ -60,8 +61,7 @@ class Aula():
         suelo = Suelo(IMG_DIR)
         suelo.dibuj_suelo(pant)
 
-        tarima = Tarima(IMG_DIR)
-        tarima.dibuj_tarima(pant)
+        self.tarima.dibuj_tarima(pant)
 
         puerta = Puerta()
         puerta.dibuj_puerta(pant)
@@ -88,18 +88,28 @@ class Aula():
             return self.ent_mesas.sprites()[1:10:2] + self.ent_mesas.sprites()[10:20:2]
         else:
             return self.ent_mesas.sprites()[11:20:2]
+    def get_pasillo(self, ent_mesa):
+        if ent_mesa in self.ent_mesas.sprites()[0:9:2]:
+            return self.get_ent_pasillos()[0]
+        if ent_mesa in self.ent_mesas.sprites()[1:10:2]:
+            return self.get_ent_pasillos()[1]
+        else:
+            return self.get_ent_pasillos()[2]
 
-    def get_mesas_libres(self):
-        mesas_libres = []
-        for i in self.mesas:
-            if not i.get_ocupacion(i.entrada_izq) or not i.get_ocupacion(i.entrada_der):
-                mesas_libres.append(i)
 
-    def get_sillas_libres(self, mesa):
+    # def get_mesas_libres(self):
+    #     mesas_libres = []
+    #     for i in self.mesas:
+    #         if not i.get_ocupacion(i.entrada_izq) or not i.get_ocupacion(i.entrada_der):
+    #             mesas_libres.append(i)
+    #     return mesas_libres
+
+    def get_sillas_libres(self):
         sillas_libres = []
-        for i in mesa.sillas:
-            if not i.ocupada():
-                sillas_libres.append(i)
+        for i in self.mesas:
+            for j in i.sillas:
+                if not j.ocupada():
+                    sillas_libres.append(j)
         return sillas_libres
 
 
