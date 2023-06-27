@@ -1,7 +1,7 @@
 import pygame
 import random
 import os
-from Persona import Persona
+from TodoAula.Persona import Persona
 
 IMG_DIR = "imagenesproy"
 

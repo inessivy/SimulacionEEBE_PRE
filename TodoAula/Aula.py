@@ -1,18 +1,19 @@
 import pygame.sprite
 
-from Suelo import Suelo
-from Tarima import Tarima
-from Puerta import Puerta
-from MesaProf import MesaProf
-from Mesa import Mesa
-from Entrada import Entrada
-
+from TodoAula.Suelo import Suelo
+from TodoAula.Tarima import Tarima
+from TodoAula.Puerta import Puerta
+from TodoAula.MesaProf import MesaProf
+from TodoAula.Mesa import Mesa
+from TodoAula.Entrada import Entrada
+from MVP.Default import default_screen_size
 
 IMG_DIR = "imagenesproy"
 
+
 class Aula():
     def __init__(self, mx, my, filas, columnas): #mx=70, my=210
-        self.size = [(650, 742)]
+        self.size = [default_screen_size[2:]]
         # self.columnas_mesas = columnas
         # self.filas_mesas= filas
         # self.mesas_x = mx

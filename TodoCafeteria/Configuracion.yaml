@@ -1,0 +1,387 @@
+# 1er nivel: nombre habitación, va a ser como salga en la app
+# 2o nivel: tipo de entidad (moving_entity or entity) seguido de un número único
+# o si se va a usar como imagen de background (bg)
+# 3o nivel: img_name, como nombre del archivo dentro de imagenerproy
+# y si es moving entity_pos_mapping (lista con las posiciones hacia donde se mueve el objeto en cada frame)
+# si no, position como posición. Las posiciones se indica con una lista [x, y]
+# Se puede añadir una variable más que es img_size en caso de que se quiera hacer un resize de la imagen
+# y si la imagen se requiere rotada en grados en sentido de las agujas del reloj
+
+# Se va a pintar en el orden que se pongan. Por lo que si hay objetos superpuestos, poner primero el que tenga
+# que ir debajo
+
+Cafetería:
+  bg:
+    img_name: 'suelo.jpg'
+
+  entity10:
+    img_name: 'mesa.jpg'
+    position: [ 50, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity11:
+    img_name: 'silla.jpg'
+    position: [ 27, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity12:
+    img_name: 'silla.jpg'
+    position: [ 103, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity20:
+    img_name: 'mesa.jpg'
+    position: [ 250, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity21:
+    img_name: 'silla.jpg'
+    position: [ 227, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity22:
+    img_name: 'silla.jpg'
+    position: [ 303, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity30:
+    img_name: 'mesa.jpg'
+    position: [ 450, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity31:
+    img_name: 'silla.jpg'
+    position: [ 427, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity32:
+    img_name: 'silla.jpg'
+    position: [ 503, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity40:
+    img_name: 'mesa.jpg'
+    position: [ 50, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity41:
+    img_name: 'silla.jpg'
+    position: [ 27, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity42:
+    img_name: 'silla.jpg'
+    position: [ 103, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity50:
+    img_name: 'mesa.jpg'
+    position: [ 250, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity51:
+    img_name: 'silla.jpg'
+    position: [ 227, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity52:
+    img_name: 'silla.jpg'
+    position: [ 303, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity60:
+    img_name: 'mesa.jpg'
+    position: [ 450, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity61:
+    img_name: 'silla.jpg'
+    position: [ 427, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity62:
+    img_name: 'silla.jpg'
+    position: [ 503, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity70:
+    img_name: 'mesa.jpg'
+    position: [ 100, 470 ]
+    img_rotation: 285
+    img_size: [ 200, 50 ]
+
+  entity71:
+    img_name: 'silla.jpg'
+    position: [ 80, 470 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity72:
+    img_name: 'silla.jpg'
+    position: [ 153, 490 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity80:
+    img_name: 'mesa.jpg'
+    position: [ 300, 470 ]
+    img_rotation: 285
+    img_size: [ 200, 50 ]
+
+  entity81:
+    img_name: 'silla.jpg'
+    position: [ 280, 470 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity82:
+    img_name: 'silla.jpg'
+    position: [ 353, 490 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity1:
+    img_name: 'estacion_basura.jpg'
+    position: [ 650, 0 ]
+    img_size: [ 50, 100 ]
+
+  entity2:
+    img_name: 'nevera.jpg'
+    position: [ 750, 170 ]
+    img_size: [ 10, 320 ]
+
+  entity3:
+    img_name: 'nevera.jpg'
+    position: [ 750, 600 ]
+    img_size: [ 400, 10 ]
+
+  entity4:
+    img_name: 'cafetera.png'
+    position: [ 994, 150 ]
+    img_size: [ 30, 150 ]
+
+  entity5:
+    img_name: 'encimera.jpg'
+    position: [ 994, 300 ]
+    img_size: [ 30, 220 ]
+
+  entity6:
+    img_name: 'encimera.jpg'
+    position: [ 874, 170 ]
+    img_size: [ 60, 320 ]
+
+  entity7:
+    img_name: 'planta.png'
+    position: [ 854, 670 ]
+    img_size: [ 100, 100 ]
+
+  # Los entity pos_mapping se han creado a partir del PosicionesCafe.py que está situado dentro de entitites
+  moving_entity1:
+    img_name: 'barista.png'
+    entity_pos_mapping: [[940, 175], [940, 200], [940, 225], [940, 225], [940, 225], [940, 225], [940, 250], [940, 275], [940, 300], [940, 300], [940, 300], [940, 300], [940, 325], [940, 350], [940, 375], [940, 400], [940, 400], [940, 400], [940, 400], [940, 400], [940, 375], [940, 350], [940, 325], [940, 300], [940, 300], [940, 300], [940, 300], [940, 275], [940, 250], [940, 225], [940, 225], [940, 225], [940, 225], [940, 200]]
+    img_size: [50, 80]
+
+  moving_entity2:
+    img_name: 'estudiante.png'
+    entity_pos_mapping: [[640, 820], [640, 820], [640, 820], [640, 820], [640, 820], [640, 795], [640, 770], [640, 745], [640, 720], [640, 695], [640, 670], [640, 645], [640, 620], [640, 595], [640, 570], [640, 545], [640, 520], [640, 495], [615, 495], [590, 495], [565, 495], [540, 495], [515, 495], [490, 495], [465, 495], [440, 495], [415, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [415, 495], [440, 495], [465, 495], [490, 495], [515, 495], [540, 495], [565, 495], [590, 495], [615, 495], [640, 495], [640, 520], [640, 545], [640, 570], [640, 595], [640, 620], [640, 645], [640, 670], [640, 695], [640, 720], [640, 745], [640, 770], [640, 795], [640, 820], [640, 820], [640, 820], [640, 820]]
+    img_size: [50, 80]
+
+  moving_entity3:
+    img_name: 'estudiante.png'
+    entity_pos_mapping: [[600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 795], [600, 770], [600, 745], [600, 720], [600, 695], [600, 670], [600, 645], [600, 620], [600, 595], [600, 570], [600, 545], [600, 520], [600, 495], [600, 470], [600, 445], [600, 420], [600, 395], [600, 370], [600, 345], [600, 320], [600, 295], [600, 270], [600, 245], [600, 220], [600, 195], [600, 170], [600, 145], [600, 120], [600, 95], [600, 70], [575, 70], [550, 70], [525, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [525, 70], [550, 70], [575, 70], [600, 70], [600, 95], [600, 120], [600, 145], [600, 170], [600, 195], [600, 220], [600, 245], [600, 270], [600, 295], [600, 320], [600, 345], [600, 370], [600, 395], [600, 420], [600, 445], [600, 470], [600, 495], [600, 520], [600, 545], [600, 570], [600, 595], [600, 620], [600, 645], [600, 670], [600, 695], [600, 720], [600, 745], [600, 770], [600, 795], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820]]
+    img_size: [ 50, 80 ]
+
+Aula:
+  bg:
+    img_name: 'suelo.jpg'
+
+  entity10:
+    img_name: 'mesa.jpg'
+    position: [ 50, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity11:
+    img_name: 'silla.jpg'
+    position: [ 27, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity12:
+    img_name: 'silla.jpg'
+    position: [ 103, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity20:
+    img_name: 'mesa.jpg'
+    position: [ 250, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity21:
+    img_name: 'silla.jpg'
+    position: [ 227, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity22:
+    img_name: 'silla.jpg'
+    position: [ 303, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity30:
+    img_name: 'mesa.jpg'
+    position: [ 450, 20 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity31:
+    img_name: 'silla.jpg'
+    position: [ 427, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity32:
+    img_name: 'silla.jpg'
+    position: [ 503, 25 ]
+    img_size: [ 20, 140 ]
+
+  entity40:
+    img_name: 'mesa.jpg'
+    position: [ 50, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity41:
+    img_name: 'silla.jpg'
+    position: [ 27, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity42:
+    img_name: 'silla.jpg'
+    position: [ 103, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity50:
+    img_name: 'mesa.jpg'
+    position: [ 250, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity51:
+    img_name: 'silla.jpg'
+    position: [ 227, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity52:
+    img_name: 'silla.jpg'
+    position: [ 303, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity60:
+    img_name: 'mesa.jpg'
+    position: [ 450, 220 ]
+    img_rotation: 90
+    img_size: [ 150, 50 ]
+
+  entity61:
+    img_name: 'silla.jpg'
+    position: [ 427, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity62:
+    img_name: 'silla.jpg'
+    position: [ 503, 225 ]
+    img_size: [ 20, 140 ]
+
+  entity70:
+    img_name: 'mesa.jpg'
+    position: [ 100, 470 ]
+    img_rotation: 285
+    img_size: [ 200, 50 ]
+
+  entity71:
+    img_name: 'silla.jpg'
+    position: [ 80, 470 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity72:
+    img_name: 'silla.jpg'
+    position: [ 153, 490 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity80:
+    img_name: 'mesa.jpg'
+    position: [ 300, 470 ]
+    img_rotation: 285
+    img_size: [ 200, 50 ]
+
+  entity81:
+    img_name: 'silla.jpg'
+    position: [ 280, 470 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity82:
+    img_name: 'silla.jpg'
+    position: [ 353, 490 ]
+    img_rotation: 15
+    img_size: [ 20, 185 ]
+
+  entity1:
+    img_name: 'estacion_basura.jpg'
+    position: [ 650, 0 ]
+    img_size: [ 50, 100 ]
+
+  entity2:
+    img_name: 'nevera.jpg'
+    position: [ 750, 170 ]
+    img_size: [ 10, 320 ]
+
+  entity3:
+    img_name: 'nevera.jpg'
+    position: [ 750, 600 ]
+    img_size: [ 400, 10 ]
+
+  entity4:
+    img_name: 'cafetera.png'
+    position: [ 994, 150 ]
+    img_size: [ 30, 150 ]
+
+  entity5:
+    img_name: 'encimera.jpg'
+    position: [ 994, 300 ]
+    img_size: [ 30, 220 ]
+
+  entity6:
+    img_name: 'encimera.jpg'
+    position: [ 874, 170 ]
+    img_size: [ 60, 320 ]
+
+  entity7:
+    img_name: 'planta.png'
+    position: [ 854, 670 ]
+    img_size: [ 100, 100 ]
+
+  # Los entity pos_mapping se han creado a partir del PosicionesCafe.py que está situado dentro de entitites
+  moving_entity1:
+    img_name: 'barista.png'
+    entity_pos_mapping: [[940, 175], [940, 200], [940, 225], [940, 225], [940, 225], [940, 225], [940, 250], [940, 275], [940, 300], [940, 300], [940, 300], [940, 300], [940, 325], [940, 350], [940, 375], [940, 400], [940, 400], [940, 400], [940, 400], [940, 400], [940, 375], [940, 350], [940, 325], [940, 300], [940, 300], [940, 300], [940, 300], [940, 275], [940, 250], [940, 225], [940, 225], [940, 225], [940, 225], [940, 200]]
+    img_size: [50, 80]
+
+  moving_entity2:
+    img_name: 'estudiante.png'
+    entity_pos_mapping: [[640, 820], [640, 820], [640, 820], [640, 820], [640, 820], [640, 795], [640, 770], [640, 745], [640, 720], [640, 695], [640, 670], [640, 645], [640, 620], [640, 595], [640, 570], [640, 545], [640, 520], [640, 495], [615, 495], [590, 495], [565, 495], [540, 495], [515, 495], [490, 495], [465, 495], [440, 495], [415, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [390, 495], [415, 495], [440, 495], [465, 495], [490, 495], [515, 495], [540, 495], [565, 495], [590, 495], [615, 495], [640, 495], [640, 520], [640, 545], [640, 570], [640, 595], [640, 620], [640, 645], [640, 670], [640, 695], [640, 720], [640, 745], [640, 770], [640, 795], [640, 820], [640, 820], [640, 820], [640, 820]]
+    img_size: [50, 80]
+
+  moving_entity3:
+    img_name: 'estudiante.png'
+    entity_pos_mapping: [[600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 795], [600, 770], [600, 745], [600, 720], [600, 695], [600, 670], [600, 645], [600, 620], [600, 595], [600, 570], [600, 545], [600, 520], [600, 495], [600, 470], [600, 445], [600, 420], [600, 395], [600, 370], [600, 345], [600, 320], [600, 295], [600, 270], [600, 245], [600, 220], [600, 195], [600, 170], [600, 145], [600, 120], [600, 95], [600, 70], [575, 70], [550, 70], [525, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [500, 70], [525, 70], [550, 70], [575, 70], [600, 70], [600, 95], [600, 120], [600, 145], [600, 170], [600, 195], [600, 220], [600, 245], [600, 270], [600, 295], [600, 320], [600, 345], [600, 370], [600, 395], [600, 420], [600, 445], [600, 470], [600, 495], [600, 520], [600, 545], [600, 570], [600, 595], [600, 620], [600, 645], [600, 670], [600, 695], [600, 720], [600, 745], [600, 770], [600, 795], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820], [600, 820]]
+    img_size: [ 50, 80 ]
+
+

@@ -1,7 +1,7 @@
 import pygame.sprite
 import os
-from Silla import Silla
-from Entrada import Entrada
+from TodoAula.Silla import Silla
+from TodoAula.Entrada import Entrada
 
 IMG_DIR = "imagenesproy"
 
