@@ -15,6 +15,9 @@ class MainWindow(QMainWindow):
     """
 
     def __init__(self):
+
+        project_path = os.path.dirname(os.path.abspath(__file__))
+
         from MVP.VIEW import RoomView, RoomHandlerView
         from MVP.MODEL import RoomHandlerPresenter, RoomHandlerModel
         from MVP.PRESENTER import RoomPresenter
@@ -23,7 +26,7 @@ class MainWindow(QMainWindow):
 
         self.setGeometry(*default_screen_size)
         pygame.init()
-        pygame.mixer.music.load("C:/Users/soooo/Downloads/sonidopy.mp3")  # Hay que poner el path del mp3
+        pygame.mixer.music.load(os.path.join(project_path, 'sonidos proy', 'sonidopy.mp3'))  # Hay que poner el path del mp3
         pygame.mixer.music.play(-1)
 
         self.is_volume_on = True

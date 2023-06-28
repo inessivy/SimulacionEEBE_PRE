@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f36d66c4-9087-45d0-9801-91370a7cf9ba" name="Changes" comment="Cambiada nombre espacio aula">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProyectoGit.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entrada.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EspacioAula.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Estudiante.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mesa.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MesaProf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Puerta.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Punto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silla.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Suelo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tarima.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View_Aula.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProyectoGit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProyectoGit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVP/ConfigPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigPrincipal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +130,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Aula" />
+        <item itemvalue="Python.Aula" />
       </list>
     </recent_temporary>
   </component>
@@ -237,13 +222,15 @@
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Doctests_in_Mesa.coverage" NAME="Doctests in Mesa Coverage Results" MODIFIED="1687893413571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Elementos" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Aula.coverage" NAME="Aula Coverage Results" MODIFIED="1687899609600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aula" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Main.coverage" NAME="Main Coverage Results" MODIFIED="1687900973167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EEBEprojectsim$main.coverage" NAME="main Coverage Results" MODIFIED="1687902115603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EEBEprojectsim$main.coverage" NAME="main Coverage Results" MODIFIED="1687960170960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$PresenterTodo.coverage" NAME="PresenterTodo Coverage Results" MODIFIED="1687888355842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Interacciones.coverage" NAME="Interacciones Coverage Results" MODIFIED="1687765458980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$AulaV2.coverage" NAME="AulaV2 Coverage Results" MODIFIED="1687899142620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aula" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Espacios.coverage" NAME="Espacios Coverage Results" MODIFIED="1687765766100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$ModelTodo.coverage" NAME="ModelTodo Coverage Results" MODIFIED="1687900556319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$Cafeteria.coverage" NAME="Cafeteria Coverage Results" MODIFIED="1687893632341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Cafeteria" />
+    <SUITE FILE_PATH="coverage/EEBEprojectsim$PRESENTER.coverage" NAME="PRESENTER Coverage Results" MODIFIED="1687946309409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
+    <SUITE FILE_PATH="coverage/EEBEprojectsim$ConfigPrincipal.coverage" NAME="ConfigPrincipal Coverage Results" MODIFIED="1687946529057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$ViewTodo.coverage" NAME="ViewTodo Coverage Results" MODIFIED="1687888363956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$VentanaPrincipal.coverage" NAME="VentanaPrincipal Coverage Results" MODIFIED="1687888742655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MVP" />
     <SUITE FILE_PATH="coverage/EEBEprojectsim$View_Aula.coverage" NAME="View_Aula Coverage Results" MODIFIED="1687631948276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

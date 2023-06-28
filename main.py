@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtCore import Qt, QEvent, QObject
 from PyQt5.QtWidgets import QApplication
 
-from MVP.ConfigPrincipal import MainWindow
+from ConfigPrincipal import MainWindow
 
 
 class KeyPressFilter(QObject):
