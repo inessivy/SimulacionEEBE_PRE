@@ -1,5 +1,7 @@
 from PyQt5.QtCore import Qt
 
+from MVP.MODEL import RoomModel
+
 
 class TitlePresenter:
     def __init__(self, rooms):
@@ -47,6 +49,36 @@ class ConfigPresenter:
         from main import qapp
         qapp.switch_from_window_to_window('config_window', 'title_window')
 
+class RoomHandlerPresenter:
+    def __init__(self, room_model, room_view, room_presenter, img_database):
+        self.room_model = room_model
+        self.view = None
+        self.room_view = room_view
+        self.img_database = img_database
+        self.room_presenter = room_presenter
+
+    def main(self):
+        if self.room_presenter.model:
+            self.room_presenter.update_model()
+
+    def main_guided(self):
+        from main import qapp
+        rooms_list = list(self.room_model.rooms.keys())
+        next_room_idx = (rooms_list.index(self.room_model.current_room_name) + 1) % len(rooms_list)
+        next_room_name = rooms_list[next_room_idx]
+        qapp.switch_to_room(next_room_name)
+
+    def start_guided(self):
+        from main import qapp
+        self.view.guided_timer.start(50000 // qapp.simulation_speed)
+
+    def change_room(self, room_name):
+        self.room_model.current_room = RoomModel(room_name, self.room_model.rooms[room_name])
+        self.room_model.current_room_name = room_name
+        self.room_view.img_database = self.img_database[room_name]
+        self.room_presenter.model = self.room_model.current_room
+        return self.room_view
+
 
 class RoomPresenter:
     def __init__(self):
@@ -67,3 +99,5 @@ class RoomPresenter:
     def update_model(self):
         self.model.update_position()
         self.view.update_view()
+
+

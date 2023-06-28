@@ -19,8 +19,8 @@ class MainWindow(QMainWindow):
         project_path = os.path.dirname(os.path.abspath(__file__))
 
         from MVP.VIEW import RoomView, RoomHandlerView
-        from MVP.MODEL import RoomHandlerPresenter, RoomHandlerModel
-        from MVP.PRESENTER import RoomPresenter
+        from MVP.MODEL import RoomHandlerModel
+        from MVP.PRESENTER import RoomPresenter, RoomHandlerPresenter
         from main import KeyPressFilter
         super().__init__()
 
@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         pygame.mixer.music.play(-1)
 
         self.is_volume_on = True
-        self.volume = 5
+        self.volume = 1
 
         self.change_volume()
 

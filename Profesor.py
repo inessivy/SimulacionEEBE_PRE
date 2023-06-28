@@ -1,4 +1,4 @@
-from Persona import *
+from TodoAula.Persona import *
 import os
 
 IMG_DIR = "imagenesproy"

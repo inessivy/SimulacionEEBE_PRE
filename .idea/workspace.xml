@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f36d66c4-9087-45d0-9801-91370a7cf9ba" name="Changes" comment="Cambiada nombre espacio aula">
-      <change beforePath="$PROJECT_DIR$/.idea/ProyectoGit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProyectoGit.iml" afterDir="false" />
+    <list default="true" id="f36d66c4-9087-45d0-9801-91370a7cf9ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVP/ConfigPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigPrincipal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigPrincipal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVP/MODEL.py" beforeDir="false" afterPath="$PROJECT_DIR$/MVP/MODEL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVP/PRESENTER.py" beforeDir="false" afterPath="$PROJECT_DIR$/MVP/PRESENTER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profesor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profesor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoAula/Aula.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAula/Aula.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoAula/Tarima.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAula/Tarima.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +114,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\soooo\Desktop\22-23\PRE\Pycharm\Scripts\python.exe" />
-      <option name="SDK_NAME" value="Python 3.11 (Pycharm)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />

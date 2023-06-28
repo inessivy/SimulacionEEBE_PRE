@@ -1,11 +1,11 @@
 import pygame.sprite
 
-from Suelo import Suelo
-from Tarima import Tarima
-from Puerta import Puerta
-from MesaProf import MesaProf
-from Mesa import Mesa
-from Entrada import Entrada
+from TodoAula.Suelo import Suelo
+from TodoAula.Tarima import Tarima
+from TodoAula.Puerta import Puerta
+from TodoAula.MesaProf import MesaProf
+from TodoAula.Mesa import Mesa
+from TodoAula.Entrada import Entrada
 
 
 IMG_DIR = "imagenesproy"

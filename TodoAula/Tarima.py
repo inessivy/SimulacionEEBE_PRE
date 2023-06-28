@@ -1,5 +1,5 @@
 import pygame
-from Entrada import *
+from TodoAula.Entrada import *
 
 
 class Tarima():
