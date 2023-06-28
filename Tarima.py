@@ -1,5 +1,6 @@
-import pygame, os
+import pygame
 from Entrada import *
+
 
 class Tarima():
     def __init__(self, dir_img, tx=3, ty=2):

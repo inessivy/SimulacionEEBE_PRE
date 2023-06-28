@@ -3,6 +3,7 @@ import os
 
 IMG_DIR = "imagenesproy"
 
+
 class Silla(pygame.sprite.Sprite):
     def __init__(self, sx, sy, dir_img=IMG_DIR):
         pygame.sprite.Sprite.__init__(self)
@@ -13,7 +14,6 @@ class Silla(pygame.sprite.Sprite):
         self.rect.center = (sx+20, sy+20)
         self.estudiante = None
         self.entrada = None
-
 
     def dibuj_silla(self, pant):
         pant.blit(self.image, (self.rect.left, self.rect.top))

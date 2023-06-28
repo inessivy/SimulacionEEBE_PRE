@@ -9,10 +9,11 @@ IMG_DIR = "imagenesproy"
 class Estudiante(Persona):
     def __init__(self, x, y, espacio):
         pygame.sprite.Sprite.__init__(self)
-        self.imagenes = {"hombre": {"sentado": "hombre_sentado.png" , "andando": "hombre_caminando.png" },
+        self.imagenes = {"hombre": {"sentado": "hombre_sentado.png", "andando": "hombre_caminando.png"},
                          "mujer": {"sentado": "mujer_sentada.png", "andando": "mujer_caminando.png"}}
         self.sexo = random.choice(list(self.imagenes))
-        self.image = pygame.transform.scale(pygame.image.load(os.path.join(IMG_DIR, self.imagenes[self.sexo]["andando"])), (45, 60))
+        self.image = pygame.transform.scale(pygame.image.load(os.path.join(
+            IMG_DIR, self.imagenes[self.sexo]["andando"])), (45, 60))
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.centery = y
@@ -22,10 +23,17 @@ class Estudiante(Persona):
         self.dest = random.choice(self.space.get_ent_pasillos())
         self.dir = self.dest.rect.center
 
-    # def salir(self):
-    #     if self.dest.estudiante == None:
-    #         self.dest = self.space.entrada
-    #         self.dir = self.dest.rect.center
+    def salir(self):
+        if self.dest.estudiante is None:
+            if self.dest in self.space.get_ent_pasillos():
+                self.dest = self.space.entrada
+                self.dir = self.dest.rect.center
+            elif self.rect.center == self.dest.entrada.rect.center:
+                self.dest = self.space.get_pasillo(self.dest)
+                self.dir = self.dest.rect.center
+            elif self.rect.center == self.dir:
+                self.dest = self.dest.entrada
+                self.dir = self.dest.rect.center
 
     def find_new_silla(self):
         new_silla = self.space.get_sillas_libres()
@@ -59,8 +67,6 @@ class Estudiante(Persona):
         if self.rect.center == self.dir:
             self.image = pygame.transform.scale(
                 pygame.image.load(os.path.join(IMG_DIR, self.imagenes[self.sexo]["sentado"])), (45, 60))
-            self.space.estudiantes_sentados.add(self)
-            # self.space.estudiantes.remove(self)
 
     def escoger_silla(self, dest):
         self.dir = dest.rect.center
@@ -74,32 +80,22 @@ class Estudiante(Persona):
         for i in self.space.mesas.sprites():
             if ent_mesa == i.entrada_der or ent_mesa == i.entrada_izq:
                 self.dest = i.get_sillas(ent_mesa)[0]
-                if not self.dest.ocupada(): # la primera
+                if not self.dest.ocupada():
                     self.escoger_silla(self.dest)
-                    # print("primera silla")
 
-
-                elif not i.get_sillas(ent_mesa)[1].ocupada():   # la silla del lado
-                    # print("segunda silla")
+                elif not i.get_sillas(ent_mesa)[1].ocupada():
                     self.dest = i.get_sillas(ent_mesa)[1]
                     self.escoger_silla(self.dest)
 
-
-                elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
-                    # print("busco otra mesa")
-                    # busco una silla en mismo pasillo
+                elif ent_mesa.destino.get_ocupacion(ent_mesa) and not all(
+                        [w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
                     for j in self.space.get_ent_mesas(self.pasillo):
                         if not j.destino.get_ocupacion(j):
                             self.dest = j
                             self.dir = self.dest.rect.center
-                # if all([w.destino.get_ocupacion(w) for w in self.space.get_ent_mesas(self.pasillo)]):
                 else:
-                    # print("voy al pasillo")
-                    # busco silla en otro pasillo
                     if self.rect.center == self.space.get_ent_mesas(self.pasillo)[0].rect.center:
-                        # print("busco silla en otro pasillo")
                         self.go_new_silla()
                     else:
                         self.dest = self.space.get_ent_mesas(self.pasillo)[0]
                         self.dir = self.dest.rect.center
-

@@ -10,10 +10,11 @@ from Entrada import Entrada
 
 IMG_DIR = "imagenesproy"
 
+
 class Aula():
-    def __init__(self, mx, my, filas, columnas): #mx=70, my=210
+    def __init__(self, mx, my, filas, columnas):
         self.size = [(650, 742)]
-        self.entrada = Entrada(600, 80)
+        self.entrada = Entrada(635, 80)
         self.tarima = Tarima(IMG_DIR)
         self.mesas = pygame.sprite.Group()
         for n in range(columnas):
@@ -32,8 +33,6 @@ class Aula():
         self.ent_mesas = pygame.sprite.Group()
         for i in self.mesas:
             self.ent_mesas.add(i.entrada_izq, i.entrada_der)
-
-        self.estudiantes_sentados = pygame.sprite.Group()
 
     def dibuj_aula(self, pant):
         suelo = Suelo(IMG_DIR)
@@ -58,7 +57,6 @@ class Aula():
     def get_ent_pasillos(self):
         return self.ent_pasillos.sprites()
 
-
     def get_ent_mesas(self, pasillo):
         if pasillo == self.get_ent_pasillos()[0]:
             return self.ent_mesas.sprites()[0:9:2]
@@ -66,6 +64,7 @@ class Aula():
             return self.ent_mesas.sprites()[1:10:2] + self.ent_mesas.sprites()[10:20:2]
         else:
             return self.ent_mesas.sprites()[11:20:2]
+
     def get_pasillo(self, ent_mesa):
         if ent_mesa in self.ent_mesas.sprites()[0:9:2]:
             return self.get_ent_pasillos()[0]
@@ -81,4 +80,3 @@ class Aula():
                 if not j.ocupada():
                     sillas_libres.append(j)
         return sillas_libres
-
