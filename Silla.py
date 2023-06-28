@@ -6,7 +6,7 @@ IMG_DIR = "imagenesproy"
 class Silla(pygame.sprite.Sprite):
     def __init__(self, sx, sy, dir_img=IMG_DIR):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.transform.scale(pygame.image.load(os.path.join(dir_img, "Silla.jpg")), (40, 40))
+        self.image = pygame.transform.scale(pygame.image.load(os.path.join(dir_img, "silla.png")), (50, 50))
         self.rect = self.image.get_rect()
         self.rect.left = sx
         self.rect.top = sy
@@ -20,7 +20,6 @@ class Silla(pygame.sprite.Sprite):
 
     def sentar(self, estudiante):
         self.estudiante = estudiante
-        # self.estudiante.change_image()
 
     def ocupada(self):
         return self.estudiante is not None

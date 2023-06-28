@@ -10,6 +10,3 @@ class Entrada(pygame.sprite.Sprite):
         self.rect.centery = y
         self.destino = pygame.sprite.Sprite()
 
-    # def dibuj_ent(self, pant, ent_pasillo):
-    #     ent_pasillo(self)
-    #     ent_pasillo.draw(pant)

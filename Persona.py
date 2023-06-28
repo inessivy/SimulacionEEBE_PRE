@@ -10,8 +10,8 @@ class Persona(pygame.sprite.Sprite):
         self.rect.centerx = x
         self.rect.centery = y
         self.dir = [random.randrange(650), random.randrange(742)]
-        self.speedx = 3.4
-        self.speedy = 3.4
+        self.speedx = 1
+        self.speedy = 1
 
     def update(self):
         if self.rect.centerx - self.dir[0] > 0:
@@ -26,4 +26,3 @@ class Persona(pygame.sprite.Sprite):
             self.rect.centery -= self.speedy
         else:
             pass
-
