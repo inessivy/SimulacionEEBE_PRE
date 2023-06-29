@@ -2,9 +2,9 @@ import os
 import random
 import pygame
 import sys
-from Aula import Aula
-from Estudiante import Estudiante
-from Profesor import  Profesor
+from TodoAula.Aula import Aula
+from TodoAula.Estudiante import Estudiante
+from Profesor import Profesor
 
 class View():
     pygame.mixer.init()
@@ -61,7 +61,8 @@ class View():
                     self.sound_bell.play(0, 3000, 1000)
                     self.sound_bell.set_volume(0.8)
                     pygame.mixer.music.set_volume(0.1)
-                screen.blit(self.profesor.image, (self.profesor.rect.centerx, self.profesor.rect.centery))
+                screen.blit(self.profesor.image,
+                            (self.profesor.rect.centerx, self.profesor.rect.centery))
                 self.profesor.update()
             self.estudiantes.update()
             self.estudiantes_sentados.update()

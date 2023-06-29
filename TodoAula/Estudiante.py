@@ -35,24 +35,25 @@ class Estudiante(Persona):
                 self.dest = self.dest.entrada
                 self.dir = self.dest.rect.center
 
+    def sentado(self):
+        if self.rect.center == self.dir:
+            self.image = pygame.transform.scale(
+                pygame.image.load(os.path.join(IMG_DIR, self.imagenes[self.sexo]["sentado"])), (45, 60))
+
     def find_new_silla(self):
         new_silla = self.space.get_sillas_libres()
         return new_silla
 
     def go_new_silla(self):
         new_silla = random.choice(self.find_new_silla())
-        # print("nueva silla", new_silla)
         if self.rect.center == self.space.get_pasillo(new_silla.entrada):
-            # print("voy a nueva mesa")
             self.dest = new_silla.entrada
             self.dir = self.dest.rect.center
         elif self.rect.center == new_silla.entrada:
-            # print("voy a nueva silla")
             self.dest = new_silla
             self.escoger_silla(self.dest)
 
         else:
-            # print("salgo al pasillo")
             self.dest = self.space.get_pasillo(new_silla.entrada)
             self.dir = self.dest.rect.center
 
@@ -63,20 +64,13 @@ class Estudiante(Persona):
         self.dest = random.choice(self.space.get_ent_mesas(pasillo))
         self.dir = self.dest.rect.center
 
-    def sentado(self):
-        if self.rect.center == self.dir:
-            self.image = pygame.transform.scale(
-                pygame.image.load(os.path.join(IMG_DIR, self.imagenes[self.sexo]["sentado"])), (45, 60))
-
     def escoger_silla(self, dest):
         self.dir = dest.rect.center
         self.dest.sentar(self)
 
     def go_silla(self, ent_mesa):
-        # para que no vibre
         self.speedx = 1
         self.speedy = 1
-        # escojo silla
         for i in self.space.mesas.sprites():
             if ent_mesa == i.entrada_der or ent_mesa == i.entrada_izq:
                 self.dest = i.get_sillas(ent_mesa)[0]

@@ -23,7 +23,6 @@ class Profesor(Persona):
         self.sound = pygame.mixer.Sound(os.path.join(self.SONIDO_DIR, "fast_talking.wav"))
 
     def explicar(self):
-        # escoger un punto aleatorio
         self.sound.play()
         self.sound.set_volume(0.3)
         if self.andando:

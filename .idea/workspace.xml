@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f36d66c4-9087-45d0-9801-91370a7cf9ba" name="Changes" comment="">
+    <list default="true" id="f36d66c4-9087-45d0-9801-91370a7cf9ba" name="Changes" comment="Interfase y Aula combinadas en app completa.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfigPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigPrincipal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MVP/MODEL.py" beforeDir="false" afterPath="$PROJECT_DIR$/MVP/MODEL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVP/PRESENTER.py" beforeDir="false" afterPath="$PROJECT_DIR$/MVP/PRESENTER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profesor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profesor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoAula/Aula.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAula/Aula.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoAula/Tarima.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAula/Tarima.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoAula/Estudiante.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAula/Estudiante.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View_Aula.py" beforeDir="false" afterPath="$PROJECT_DIR$/View_Aula.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687708427627</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Interfase y Aula combinadas en app completa.">
+      <option name="closed" value="true" />
+      <created>1687991334614</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687991334614</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +223,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interfaz" />
     <MESSAGE value="Cambiada nombre espacio aula" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiada nombre espacio aula" />
+    <MESSAGE value="Interfase y Aula combinadas en app completa." />
+    <option name="LAST_COMMIT_MESSAGE" value="Interfase y Aula combinadas en app completa." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EEBEprojectsim$mainwindow.coverage" NAME="mainwindow Coverage Results" MODIFIED="1687901014354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SplitApp" />
